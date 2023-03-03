@@ -20,7 +20,7 @@ public class Concierto implements Serializable{
     private long id;
     private String costo;
     private String fecha;
-    private String MaxPersonas;
+    private String max_personas;
     private String lugar;
     
     @ManyToOne
@@ -51,12 +51,12 @@ public class Concierto implements Serializable{
         this.fecha = fecha;
     }
 
-    public String getMaxPersonas() {
-        return MaxPersonas;
+    public String getMax_personas() {
+        return max_personas;
     }
 
-    public void setMaxPersonas(String MaxPersonas) {
-        this.MaxPersonas = MaxPersonas;
+    public void setMax_personas(String max_personas) {
+        this.max_personas = max_personas;
     }
 
     public String getLugar() {
