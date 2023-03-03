@@ -16,24 +16,16 @@ public class Concierto implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
     
+    private long id;
     private String costo;
     private String fecha;
-    private int MaxPersonas;
+    private String MaxPersonas;
     private String lugar;
     
     @ManyToOne
     @JoinColumn(name="artista_id")
     private Artista artista;
-
-    public Artista getArtista() {
-        return artista;
-    }
-
-    public void setArtista(Artista artista) {
-        this.artista = artista;
-    }
 
     public long getId() {
         return id;
@@ -59,11 +51,11 @@ public class Concierto implements Serializable{
         this.fecha = fecha;
     }
 
-    public int getMaxPersonas() {
+    public String getMaxPersonas() {
         return MaxPersonas;
     }
 
-    public void setMaxPersonas(int MaxPersonas) {
+    public void setMaxPersonas(String MaxPersonas) {
         this.MaxPersonas = MaxPersonas;
     }
 
@@ -75,5 +67,11 @@ public class Concierto implements Serializable{
         this.lugar = lugar;
     }
     
-    
+    public Artista getArtista() {
+        return artista;
+    }
+
+    public void setArtista(Artista artista) {
+        this.artista = artista;
+    }
 }
