@@ -49,10 +49,10 @@
                         <div class="form-group mb-3 row"> 
                             <label class="col-md-2 col-form-label" for="artistas">Artista</label>
                             <div class="col-sm-10"> 
-                                <select th:field="*{artista}" class="form-control form-control-sm col-md-6" id="artista" aria-describedby="emailHelp">
-                                    <option th:each="x:${artista}"
+                                <select th:field="*{artista}" class="form-control form-control-sm col-md-6" id="nombre" aria-describedby="emailHelp">
+                                    <option th:each="x:${artistas}"
                                             th:value="${x.id}"
-                                            th:text="${x.artista}"/>
+                                            th:text="${x.nombre}"/>
                                 </select>
                             </div>
                         </div>
