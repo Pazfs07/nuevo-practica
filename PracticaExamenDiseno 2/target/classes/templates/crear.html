@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Agregar o editar concierto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="card-header bg-black text-white"> </div>
+            <div class="card-body"> 
+                <div class="container"> 
+                    <form th:object = "${concierto}"
+                          th:action="@{/save}"
+                          method="POST"
+                          >                         
+                        <input type ="hidden" th:field="*{id}">
+                        <div class="form-group mb-3 row"> 
+                            <label class="col-md-2 col-form-label" for="costo">Costo</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{costo}" placeholder="Costo Concierto" id="costo" aria-describedby="emailHelp"> 
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row"> 
+                            <label class="col-md-2 col-form-label" for="fecha">Fecha</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{fecha}" placeholder="Fecha Concierto" id="fecha" aria-describedby="emailHelp"> 
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row"> 
+                            <label class="col-md-2 col-form-label" for="max_personas">Máximo Personas</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{max_personas}" placeholder="Máximo Personas" id="max_personas" aria-describedby="emailHelp"> 
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row"> 
+                            <label class="col-md-2 col-form-label" for="lugar">Lugar</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control form-control-sm col-md-6" th:field="*{lugar}" placeholder="Lugar" id="lugar" aria-describedby="emailHelp"> 
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row"> 
+                            <label class="col-md-2 col-form-label" for="artistas">Artista</label>
+                            <div class="col-sm-10"> 
+                                <select th:field="*{artista}" class="form-control form-control-sm col-md-6" id="artista" aria-describedby="emailHelp">
+                                    <option th:each="x:${artista}"
+                                            th:value="${x.id}"
+                                            th:text="${x.artista}"/>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" value="Guardar">Submit</button>
+                    </form>  
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
